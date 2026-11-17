@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'MinecraftLocal';
+  src: url('https://fonts.cdnfonts.com/s/14890/MinecraftRegular-Bmg3.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-minecraft {
+  font-family: 'Minecraft', 'MinecraftLocal', 'Press Start 2P', 'Silkscreen', monospace, sans-serif !important;
+  text-rendering: pixelated;
+  image-rendering: pixelated;
+}
+
+.minecraft-glow {
+  text-shadow: 
+    4px 4px 0px #042917,
+    0 0 15px rgba(0, 255, 136, 0.75),
+    0 0 35px rgba(0, 255, 136, 0.45);
+}
+
+:root {
+  --background: #0d0e12;
+  --foreground: #f3f4f6;
+  --card: #141722;
+  --card-hover: #1c202f;
+  --border: #232838;
+  --neon-green: #00ff88;
+  --neon-green-glow: rgba(0, 255, 136, 0.25);
+  --neon-red: #ff3355;
+  --brand-blue: #0055FF;
+  --orange-accent: #FF3D00;
+  --daylight-bg: #F7F9FB;
+}
+
+body {
+  background-color: #0d0e12;
+  color: #f3f4f6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #12151f;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #283044;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
+}
+
+/* Page-Load Splash Curtain Keyframes */
+@keyframes splash-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    letter-spacing: -4px;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02);
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    letter-spacing: 0px;
+  }
+}
+
+.animate-splash-pulse {
+  animation: splash-pulse 2.5s ease forwards;
+}
+
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-splash-pulse {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    letter-spacing: 0 !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 3D Perspective Card Support */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Daylight field pattern texture */
+.daylight-pitch-bg {
+  background-color: #F7F9FB;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 85, 255, 0.03) 0%, transparent 60%),
+    linear-gradient(to right, rgba(0, 85, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 85, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+.neon-border {
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.25);
+}
+
+@keyframes live-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+.animate-live {
+  animation: live-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

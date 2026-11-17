@@ -1,0 +1,11 @@
+{
+  "name": "fifa-project-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix footylive run dev",
+    "build": "npm --prefix footylive run build",
+    "start": "npm --prefix footylive run start",
+    "lint": "npm --prefix footylive run lint"
+  }
+}
